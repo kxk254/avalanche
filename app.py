@@ -19,7 +19,7 @@ def clean_text(text):
 
 def get_dataset_path():
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    csv_path = os.path.join(current_dir, "data", "customer_reviews.csv")
+    csv_path = os.path.join(current_dir, "customer_reviews.csv")
     return csv_path
 
 load_dotenv()
@@ -65,3 +65,4 @@ if "df" in st.session_state:
     st.subheader("Sentiment by Product")
     gourped = st.session_state["df"].groupby(["PRODUCT"])["SENTIMENT_SCORE"].mean()
     st.bar_chart(gourped)
+
